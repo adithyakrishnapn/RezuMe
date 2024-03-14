@@ -1,0 +1,218 @@
+body {
+  margin: 0%;
+  font-family: "Kode Mono", monospace;
+}
+
+a {
+  color: #00B7FF;
+  font-family: "Kode Mono", monospace;
+}
+
+.navbar{ 
+  background-color: rgb(0, 0, 0);
+  z-index: 999999;
+}
+.nvf{
+  color: orange;
+  font-weight: 800;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: "Kode Mono", monospace;
+}
+.navbar-nav li a{
+  color: white;
+  font-family: "Kode Mono", monospace;
+}
+
+.navbar-nav li a .active{
+  color: orangered;
+  font-family: "Kode Mono", monospace;
+}
+
+.navbar-nav li a:hover{
+  color: rgb(255, 174, 0);
+}
+
+
+
+.imagep{
+  background-color: #171717;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+
+.loginp{
+  background-color: rgb(0, 0, 0);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  overflow: hidden;
+}
+.loginp h3{
+  color: rgb(0, 0, 0);
+  font-weight: 500;
+  outline: dashed black;
+  text-align: center;
+  font-family: "Kode Mono", monospace;
+}
+
+.box{
+  background-color: orange;
+  padding: 50px;
+  width: 60%;
+}
+
+.box_1{
+  background-color: orange;
+  padding: 50px;
+  width: 60%;
+  border: dashed #db6930 7px;
+  font-family: "Kode Mono", monospace;
+}
+
+@media screen and (max-width: 700px) {
+  .box {
+    background-color: orange;
+    width: 80%;
+    padding: 10px;
+  }
+  .box_1 {
+    background-color: orange;
+    width: 80%;
+    padding: 10px;
+  }
+  .loginp{
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+
+form input[type="text"],[type="email"],[type="number"],[type="password"] {
+  width: 100%;
+  border: none;
+  border-radius: 0.1cm;
+  padding: 12px;
+  font-family: "Kode Mono", monospace;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #db6930;
+  border: dashed black;
+  transition: 1s;
+  color: black;
+}
+input[type="text"]:focus {
+  outline: none;
+  background-color: orange;
+  color: black;
+  border: dashed black;
+}
+input[type="password"]:focus {
+  outline: none;
+  background-color: orange;
+  color: black;
+  border: dashed black;
+}
+input[type="email"]:focus {
+  outline: none;
+  background-color: orange;
+  color: black;
+  border: dashed black;
+}
+input[type="number"]:focus {
+  outline: none;
+  background-color: orange;
+  color: black;
+  border: dashed black;
+}
+
+form input[type="submit"],[type="file"]{
+  background-color: black;
+  margin-top: 20px;
+  border: none;
+  border-radius: 0.1cm;
+  padding: 7px;
+  font-size: 20px;
+  color: white;
+  font-weight: 400;
+  width: 100%;
+  font-family: "Kode Mono", monospace;
+}
+form input[type="submit"]:hover{
+  background-color: orange;
+  margin-top: 20px;
+  border: dashed black;
+  border-radius: 0.1cm;
+  padding: 7px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  color: black;
+  transition: 1s;
+  width: 100%;
+}
+label{
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 20px;
+  font-family: "Kode Mono", monospace;
+}
+.mainbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #171717;
+  padding-top: 150px;
+  padding-bottom: 150px;
+}
+@media screen and(max-width: 700px) {
+  .mainbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #171717;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+}
+
+textarea{
+  width: 100%;
+  height: 200px;
+  background-color: #db6930;
+  color: black;
+  border: dashed black;
+  transition: 1s;
+}
+textarea:focus{
+  outline: none;
+  background-color: orange;
+  color: black;
+  border: dashed black;
+}
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.55)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.ftr{
+  font-family: "Kode Mono", monospace;
+}
+
+.cn{
+  left: 0;
+  bottom: 0;
+  width: 100%; /* Adjust padding as needed */
+}
+.about{
+  background-color: #171717;
+  height: auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

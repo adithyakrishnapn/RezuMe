@@ -1,0 +1,84 @@
+<section style="padding-top: 100px;background-color: #171717;">
+    <div class="mainbox">
+        <div class="box">
+            <h3>Let's generate it !!</h3><br>
+            <form action="createpdf/generatepdf" method="POST" enctype="multipart/form-data">
+
+                <label for="">Image</label>
+                <input type="file" name="Image" class="form-control">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Full Name" required><br><br>
+
+                <label for="name">Number:</label>
+                <input type="number" id="number" name="number" placeholder="Number" required><br><br>
+
+
+                <label for="name">Mail:</label>
+                <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Age" required><br><br>
+
+                <label for="yourself">Description about yourself:</label><br>
+                <textarea name="yourself" placeholder="Describe yourself"></textarea><br><br>
+
+                <label for="education">Education:</label>
+                <div id="education_fields">
+
+                    <input type="text" id="education_1" name="education[]" placeholder="Your Schooling &Education"
+                        required>
+                    <textarea id="education_1_description" name="education_description[]"
+                        placeholder="Description / optional"></textarea>
+
+                    <input type="text" id="education_2" name="education[]" placeholder="Your Schooling &Education"
+                        required>
+                    <textarea id="education_2_description" name="education_description[]"
+                        placeholder="Description / optional"></textarea>
+
+                    <button type="button" onclick="addEducationField()">+</button>
+
+                </div><br>
+
+                <label for="skills">Skills:</label>
+                <div id="skills_fields">
+                    <input type="text" id="skills_1" name="skills[]" placeholder="Your skills" required>
+                    <input type="text" id="skills_2" name="skills[]" placeholder="Your skills" required>
+                    <button type="button" onclick="addSkillsField()">+</button>
+                </div><br>
+
+                <label for="Experience">Experience: </label>
+                <div id="experience_fields">
+
+                    <input type="text" id="experience_1" name="experience[]" placeholder="Your Experience" required>
+                    <textarea id="experience_1_description" name="experience_description[]"
+                        placeholder="Description /optional"></textarea>
+
+                    <input type="text" id="experience_2" name="experience[]" placeholder="Your Experience" required>
+                    <textarea id="experience_2_description" name="experience_description[]"
+                        placeholder="Description /optional"></textarea>
+
+                    <button type="button" onclick="addExperienceField()">+</button>
+                </div><br>
+
+
+                <label for="passion">Passion:</label>
+                <div id="passion_fields">
+                    <input type="text" id="passion_1" name="passion[]" placeholder="Your Passions" required>
+                    <input type="text" id="passion_2" name="passion[]" placeholder="Your Passions" required>
+                    <button type="button" onclick="addPassionField()">+</button>
+                </div><br>
+
+                <label for="hobbies">Hobbies:</label>
+                <div id="hobbies_fields">
+                    <input type="text" id="hobbies_1" name="hobbies[]" placeholder="Whats your hobby ?" required>
+                    <input type="text" id="hobbies_2" name="hobbies[]" placeholder="Whats your hobby ?" required>
+                    <button type="button" onclick="addHobbiesField()">+</button>
+                </div><br>
+
+                <input type="submit" value="GENERATE">
+            </form>
+            <script src="/javascripts/script.js"></script>
+        </div>
+    </div>
+</section>
