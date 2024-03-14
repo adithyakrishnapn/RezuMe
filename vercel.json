@@ -7,9 +7,9 @@
         }
     ],
     "routes": [
-        {
-            "src" : "/(.*)",
-            "dest" : "/"
-        }
+        { "src": "/createpdf(.*)", "dest": "/createpdf" },
+        { "src": "/about(.*)", "dest": "/about" },
+        { "src": "/signup(.*)", "dest": "/signup" },
+        { "src": "/(.*)", "dest": "/" }
     ]
 }
