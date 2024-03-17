@@ -113,11 +113,9 @@ router.post('/generatepdf', function (req, res, next) {
     
     div#resume h1 {
       margin: 0 0 16px 0;
-      padding: 0 0 16px 0;
       font-size: 70px;
       font-weight: bold;
       letter-spacing: -2px;
-      border-bottom: 1px solid #999;
       line-height: 50px;
     }
     
@@ -279,10 +277,10 @@ router.post('/generatepdf', function (req, res, next) {
   <div id="resume">
       <img src="file://${imagePath}" alt="${req.body.name}">
       <h1><p>${req.body.name}</p></h1>
+      <p id="objective">${req.body.yourself}</p><hr>
       <p>Cell: ${req.body.number}</p>
       <p>Age: ${req.body.age}</p>
-      <p>Email: ${req.body.email}</a>
-      <p id="objective">${req.body.yourself}</p><hr>
+      <p>Email: ${req.body.email}</a><hr>
       <dl>
           <dt>Education
           <dd>
