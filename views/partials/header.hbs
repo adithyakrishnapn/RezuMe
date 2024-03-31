@@ -1,6 +1,10 @@
 <header id="header">
     <nav class="navbar navbar-expand-lg p-3" style="position: fixed; width:100%;">
+        {{#if main}}
         <a class="nvf" href="/">RezuMe</a>
+        {{else}}
+        <a class="nvf" href="/" style="color: white;">RezuMe</a>
+        {{/if}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,7 +12,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    {{#if main}}
                     <a class="nav-link" href="/about">&nbsp;&nbsp;About</a>
+                    {{else}}
+                    <a class="nav-link" href="/about" style="color: orange;">&nbsp;&nbsp;About</a>
+                    {{/if}}
                 </li>
             </ul>
         </div>

@@ -1,15 +1,27 @@
 {
-    "version":2,
     "builds": [
-        {
-            "src" :"./index.js",
-            "use" :"node"
-        }
+      {
+        "src": "/app.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-        { "src": "/createpdf(.*)", "dest": "/createpdf" },
-        { "src": "/about(.*)", "dest": "/about" },
-        { "src": "/signup(.*)", "dest": "/signup" },
-        { "src": "/(.*)", "dest": "/" }
+      {
+        "src": "/(.*)",
+        "dest": "routes/index.js"
+      },
+      {
+        "src": "/about",
+        "dest": "/routes/about.js"
+      },
+      {
+        "src": "/createpdf",
+        "dest": "routes/createpdf.js"
+      },
+      {
+        "src": "/signup",
+        "dest": "routes/signup.js"
+      }
     ]
-}
+  }
+  

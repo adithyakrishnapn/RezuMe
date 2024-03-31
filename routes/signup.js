@@ -5,8 +5,9 @@ const session = require('express-session');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let main = "active";
   let img = '/images/Amsterdam.png';
-  res.render('signup/signin', { title: 'RezuME' , img, create: false});
+  res.render('signup/signin', { title: 'RezuME' , img, create: false, main});
 });
 
 router.post('/signup',(req,res,next)=>{ 

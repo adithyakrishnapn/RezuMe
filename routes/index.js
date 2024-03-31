@@ -8,8 +8,9 @@ const session = require('express-session');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  let main = "active";
   let img = '/images/Amsterdam.png';
-  res.render('index', { title: 'RezuME' , img, create: false});
+  res.render('index', { title: 'RezuME' , img, create: false ,main});
 });
 
 router.post('/index',(req,res,next)=>{ 

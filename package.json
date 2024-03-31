@@ -1,9 +1,9 @@
 {
   "name": "resume-generator",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "node ./bin/www",
     "build": "echo 'No build step required'"
   },
   "dependencies": {
@@ -28,6 +28,6 @@
   "license": "ISC",
   "description": "",
   "engines": {
-    "node": "14.x"
+    "node": "20.x"
   }
 }
