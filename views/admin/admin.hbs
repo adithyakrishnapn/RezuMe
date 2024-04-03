@@ -1,0 +1,14 @@
+<section style="padding-top: 200px; padding-bottom: 200px; display: flex; justify-content: center; align-items:center;">
+    <table class="admintable">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {{#each products}}
+        <tr>
+            <td>{{this.Name}}</td>
+            <td>{{this.Mail}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</section>

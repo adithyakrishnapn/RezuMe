@@ -32,5 +32,13 @@ module.exports = {
                     resolve({ status: false });
                 }
             })
+        },
+        LoginInfo : ()=>{
+            return new Promise(async (resolve, reject)=>{
+                let product = await db.get().collection('details').find().toArray();
+                resolve(product);
+            })
         }
+
+
     }

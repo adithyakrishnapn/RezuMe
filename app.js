@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var createRouter = require('./routes/createpdf');
 var aboutRouter = require('./routes/about');
 var signupRouter = require('./routes/signup');
+var adminRouter = require('./routes/admin');
 var hbs = require('express-handlebars');
 var app = express();
 var db = require('./config/connection');
@@ -44,6 +45,7 @@ app.use('/', indexRouter);
 app.use('/createpdf', createRouter);
 app.use('/about', aboutRouter);
 app.use('/signup', signupRouter);
+app.use('/admin', adminRouter);
 
 
 // catch 404 and forward to error handler

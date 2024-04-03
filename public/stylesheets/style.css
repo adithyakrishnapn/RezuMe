@@ -246,3 +246,7 @@ textarea:focus{
 
 
 }
+
+.admintable th,td{
+  padding: 10px;
+}
