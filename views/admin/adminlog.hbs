@@ -1,4 +1,10 @@
 <section style="padding-top: 200px; padding-bottom: 200px; display:flex; align-items: center; justify-content: center; background-color: black;">
+    {{#if error}}
+    <script>
+        alert("Invalid credentials");
+    </script>
+    {{/if}}
+    
     <div class="box">
         <h3>Login to use RezuMe</h3>
         <form action="admin/adminlog" method="post">

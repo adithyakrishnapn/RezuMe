@@ -4,11 +4,11 @@ var db = require('../config/connection');
 module.exports = {
     adminLogin : (data)=>{
         return new Promise (async(resolve,reject)=>{
-            response = {};
-            let admin = await db.get().collections('admin').findOne({Name : data.Name});
+            let response = {};
+            let admin = await db.get().collection('admin').findOne({Name : data.name});
             if(admin){
                 if(admin.Pass == data.Password){
-                    response.user = user;
+                    response.admin = admin;
                     response.status = true;
                     console.log("Login Successful");
                     resolve(response);

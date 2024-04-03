@@ -20,7 +20,11 @@
   {{#if create}}
   {{>header-create}}
   {{else}}
+  {{#if ad}}
+  {{>admin-header}}
+  {{else}}
   {{>header}}
+  {{/if}}
   {{/if}}
   {{{body}}}
   {{>footer}}
