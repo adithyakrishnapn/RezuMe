@@ -6,6 +6,9 @@ const session = require('express-session');
 const fs = require('fs');
 
 
+
+
+
 //Middleware
 const VerifyLogin = function (req, res, next) {
   if (req.session.loggedIn) {
@@ -24,9 +27,12 @@ router.get('/', VerifyLogin, function (req, res, next) {
 });
 
 // POST request handler
-router.post('/generatepdf', function (req, res, next) {
-  console.log(req.body);
-  console.log(req.body['education[]']);
+router.post('/generatepdf',function (req, res) {
+  
+  let id = Date.now();
+  let image = req.files.Image;
+  image.mv('./public/rezume-images/' + id + '.jpeg');
+  const imagePath = path.join(__dirname, '..', 'public', 'rezume-images').replace(/\\/g, '/');
 
 
   const education = req.body['education[]'];
@@ -38,8 +44,6 @@ router.post('/generatepdf', function (req, res, next) {
   const experience_description = req.body['experience_description[]'];
 
 
-  console.log("check: ", education)
-  console.log(education.length);
   var educationHtml = '';
   var educationdescriptionHtml = '';
   for (let i = 0; i < education.length; i++) {
@@ -75,16 +79,7 @@ router.post('/generatepdf', function (req, res, next) {
   }
 
   // Example HTML content for the PDF
-  const image = req.files.Image;
-  const imagePath = './public/rezume-images/' + req.body.name;
-
-  image.mv(imagePath, async function (err) {
-    if (err) {
-      console.error(err);
-      res.status(500).send('Error moving image');
-      return;
-    }
-    var htmlContent = await `
+    var htmlContent = `
   <!DOCTYPE html>
   <html lang="en">
   
@@ -275,8 +270,8 @@ router.post('/generatepdf', function (req, res, next) {
   
   <body>
   <div id="resume">
-      <img src="file://${imagePath}" alt="${req.body.name}">
-      <h1><p>${req.body.name}</p></h1>
+      <img src = "1713769952833.jpeg" alt="${req.body.name}">
+      <h1><p style="letter-spacing: 3px;">${req.body.name}</p></h1>
       <p id="objective">${req.body.yourself}</p><hr>
       <p>Cell: ${req.body.number}</p>
       <p>Age: ${req.body.age}</p>
@@ -314,8 +309,12 @@ router.post('/generatepdf', function (req, res, next) {
   `;
 
     // Options for PDF generation
-    var options = { format: 'Letter' }; // You can customize this as needed
+    var options = { 
+      format: 'Letter',
+      base: 'file:///' + imagePath + '/' 
+    }; // You can customize this as needed
 
+    console.log(options.base);
     // Generate PDF
     pdf.create(htmlContent, options).toFile('resume.pdf', function (err, result) {
       if (err) {
@@ -328,6 +327,5 @@ router.post('/generatepdf', function (req, res, next) {
       }
     });
   });
-});
 
 module.exports = router;
