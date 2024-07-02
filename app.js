@@ -4,10 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+var userRouter = require('./routes/user');
 var createRouter = require('./routes/createpdf');
-var aboutRouter = require('./routes/about');
-var signupRouter = require('./routes/signup');
 var adminRouter = require('./routes/admin');
 var hbs = require('express-handlebars');
 var app = express();
@@ -36,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload());
 app.use(session({
   secret :"Key",
-  cookie:{maxAge:6000000},
+  cookie:{maxAge:60000000},
   resave: false,
   saveUninitialized: false,
 }));
@@ -46,10 +44,8 @@ db.connect((err) => {
   else console.log("Connected to database")
 });
 
-app.use('/', indexRouter);
+app.use('/', userRouter);
 app.use('/createpdf', createRouter);
-app.use('/about', aboutRouter);
-app.use('/signup', signupRouter);
 app.use('/admin', adminRouter);
 
 

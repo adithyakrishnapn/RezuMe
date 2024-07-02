@@ -28,11 +28,6 @@ router.get('/', VerifyLogin, function (req, res, next) {
 
 // POST request handler
 router.post('/generatepdf',function (req, res) {
-  
-  let id = Date.now();
-  let image = req.files.Image;
-  image.mv('./public/rezume-images/' + id + '.jpeg');
-  const imagePath = path.join(__dirname, '..', 'public', 'rezume-images').replace(/\\/g, '/');
 
 
   const education = req.body['education[]'];
@@ -270,7 +265,6 @@ router.post('/generatepdf',function (req, res) {
   
   <body>
   <div id="resume">
-      <img src = "1713769952833.jpeg" alt="${req.body.name}">
       <h1><p style="letter-spacing: 3px;">${req.body.name}</p></h1>
       <p id="objective">${req.body.yourself}</p><hr>
       <p>Cell: ${req.body.number}</p>
@@ -311,7 +305,6 @@ router.post('/generatepdf',function (req, res) {
     // Options for PDF generation
     var options = { 
       format: 'Letter',
-      base: 'file:///' + imagePath + '/' 
     }; // You can customize this as needed
 
     console.log(options.base);

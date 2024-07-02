@@ -38,6 +38,13 @@ module.exports = {
                 let product = await db.get().collection('details').find().toArray();
                 resolve(product);
             })
+        },
+
+        CheckInfo : (data)=>{
+            return new Promise(async (resolve, reject)=>{
+                let product = await db.get().collection('details').find({Mail : data.Mail});
+                resolve(product);
+            })
         }
 
 

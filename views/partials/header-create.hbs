@@ -10,12 +10,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/about">&nbsp;&nbsp;About</a>
                 </li>
-
-                {{#if user}}
-                <li class="nav-item" style="position: absolute; right: 3%; color: white; padding-top: 7px;">
-                    <a >&nbsp;&nbsp;{{user.Name}}</a>
-                </li>
-                {{/if}}
+                <li class="nav-item">
+                    {{#if user}}
+                    <a class="nav-link" href="/admin/logout">&nbsp;&nbsp;Logout</a>
+                    {{/if}}                </li>
             </ul>
         </div>
     </nav>

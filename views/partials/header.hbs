@@ -3,7 +3,11 @@
         {{#if main}}
         <a class="nvf" href="/">RezuMe</a>
         {{else}}
+        {{#if about}}
         <a class="nvf" href="/" style="color: white;">RezuMe</a>
+        {{else}}
+        <a class="nvf" href="/">RezuMe</a>
+        {{/if}}
         {{/if}}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +19,11 @@
                     {{#if main}}
                     <a class="nav-link" href="/about">&nbsp;&nbsp;About</a>
                     {{else}}
+                    {{#if about}}
                     <a class="nav-link" href="/about" style="color: orange;">&nbsp;&nbsp;About</a>
+                    {{else}}
+                    <a class="nav-link" href="/about">&nbsp;&nbsp;About</a>
+                    {{/if}}
                     {{/if}}
                 </li>
             </ul>

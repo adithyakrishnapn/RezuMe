@@ -1,10 +1,15 @@
 <section style="background-color: black; padding
 150px; height: 110vh;padding-top: 100px; padding-bottom: 200px;">
+    {{#if mailError}}
+    <script>
+        alert('Already registered');
+    </script>
+    {{/if}}
     <div class="container">
         <div class="loginp">
             <div class="box">
                 <h3>Create account to use RezuMe.</h3>
-                <form action="signup/signup" method="post">
+                <form action="/signup" method="post">
                     <label>Name</label><br>
                     <input type="text" name="Name" placeholder="Username"><br>
                     <label>Mail ID</label><br>

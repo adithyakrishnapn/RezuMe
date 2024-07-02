@@ -5,10 +5,7 @@
             <h6 style="font-weight: 700;"><u>INSTRUCTIONS :</u></h6>
             <p style="border: dashed 3px black; margin-top: 20px; padding: 10px; text-align: center;">180-200 word are enough, try downloading our sample resume <a href="/Resume/resume.pdf" download>Click here</a><br>
             In the Description areas, If there is no content to be added then leave a space there.</p> 
-            <form action="createpdf/generatepdf" method="POST" enctype="multipart/form-data">
-
-                <label for="">Image</label>
-                <input type="file" name="Image" class="form-control">
+            <form action="createpdf/generatepdf" method="POST">
 
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" placeholder="Full Name" required><br><br>
